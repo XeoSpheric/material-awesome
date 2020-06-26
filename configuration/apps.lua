@@ -22,7 +22,8 @@ return {
     social = 'signal-desktop',
     game = rofi_command,
     files = 'nautilus -w',
-    music = 'spotify'
+    music = 'spotify',
+    education = 'zoom'
   },
   -- List of apps to start once on start-up
   run_on_start_up = {

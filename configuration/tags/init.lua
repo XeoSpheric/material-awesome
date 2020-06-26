@@ -41,9 +41,9 @@ local tags = {
     screen = 1
   },
   {
-    icon = icons.lab,
+    icon = icons.book,
     type = 'any',
-    defaultApp = apps.default.rofi,
+    defaultApp = apps.default.education,
     screen = 1
   }
 }
