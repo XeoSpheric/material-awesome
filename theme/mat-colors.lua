@@ -313,5 +313,16 @@ return {
   -- Black
   black = '#000000',
   -- White
-  white = '#FFFFFF'
+  white = '#FFFFFF',
+
+
+
+  --{}-------
+  -- Custom Colors
+  --{}-------
+  blackOlive = '#41463D',
+  seaGreen = '#1CFEBA',
+  orangeCrayola = '#F4D35E'
+
+
 }

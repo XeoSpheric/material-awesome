@@ -86,30 +86,6 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'Print',
-    function()
-      awful.util.spawn_with_shell(apps.default.delayed_screenshot)
-    end,
-    {description = 'Mark an area and screenshot it 10 seconds later (clipboard)', group = 'screenshots (clipboard)'}
-  ),
-  awful.key(
-    {},
-    'Print',
-    function()
-      awful.util.spawn_with_shell(apps.default.screenshot)
-    end,
-    {description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'screenshots (clipboard)'}
-  ),
-  awful.key(
-    {'Control'},
-    'Print',
-    function()
-      awful.util.spawn_with_shell(apps.default.region_screenshot)
-    end,
-    {description = 'Mark an area and screenshot it to your clipboard', group = 'screenshots (clipboard)'}
-  ),
-  awful.key(
-    {modkey},
     'c',
     function()
       awful.util.spawn(apps.default.editor)
@@ -124,10 +100,27 @@ local globalKeys =
     end,
     {description = 'open a browser', group = 'launcher'}
   ),
+  awful.key(
+    {},
+    'Print',
+    function()
+      awful.util.spawn_with_shell(apps.default.screenshot)
+    end,
+    {description = 'Take a screenshot of your active monitor', group = 'screenshots'}
+  ),
+  awful.key(
+    {'Control'},
+    'Print',
+    function()
+      awful.util.spawn_with_shell(apps.default.screenshot_gui)
+    end,
+    {description = 'Mark an area and screenshot it', group = 'screenshots'}
+  ),
+
   -- Standard program
   awful.key(
     {modkey},
-    'x',
+    't',
     function()
       awful.spawn(apps.default.terminal)
     end,
@@ -332,20 +325,20 @@ local globalKeys =
     {description = 'move window to next screen', group = 'client'}
   ),
   -- Open default program for tag
-  awful.key(
-    {modkey},
-    't',
-    function()
-      awful.spawn(
-          awful.screen.focused().selected_tag.defaultApp,
-          {
-            tag = _G.mouse.screen.selected_tag,
-            placement = awful.placement.bottom_right
-          }
-        )
-    end,
-    {description = 'open default program for tag/workspace', group = 'tag'}
-  ),
+  -- awful.key(
+  --   {modkey},
+  --   't',
+  --   function()
+  --     awful.spawn(
+  --         awful.screen.focused().selected_tag.defaultApp,
+  --         {
+  --           tag = _G.mouse.screen.selected_tag,
+  --           placement = awful.placement.bottom_right
+  --         }
+  --       )
+  --   end,
+  --   {description = 'open default program for tag/workspace', group = 'tag'}
+  -- ),
   -- Custom hotkeys
   -- vfio integration
   awful.key(
