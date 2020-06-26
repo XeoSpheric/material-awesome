@@ -43,7 +43,7 @@ local globalKeys =
     {description = 'show main menu', group = 'awesome'}
   ),
   awful.key(
-    {altkey},
+    {modkey},
     'space',
     function()
       _G.screen.primary.left_panel:toggle(true)
@@ -116,8 +116,6 @@ local globalKeys =
     end,
     {description = 'Mark an area and screenshot it', group = 'screenshots'}
   ),
-
-  -- Standard program
   awful.key(
     {modkey},
     't',
@@ -126,6 +124,16 @@ local globalKeys =
     end,
     {description = 'open a terminal', group = 'launcher'}
   ),
+  awful.key(
+    {modkey},
+    'm',
+    function()
+      awful.spawn(apps.default.music)
+    end,
+    {description = 'open a music player', group = 'launcher'}
+  ),
+  -- Standard program
+ 
   awful.key({modkey, 'Control'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
   awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
   awful.key(
@@ -194,7 +202,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'space',
+    '\\',
     function()
       awful.layout.inc(1)
     end,
