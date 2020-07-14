@@ -27,10 +27,9 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
+    'autorandr --change',	  
     'nm-applet', -- wifi
     'xfce4-power-manager', -- Battery
-    'autorandr --change', -- Multi Monitor/auto change between docked and undocked
-    'sleep 2; discord',
     'picom',
     'numlockx on', -- enable numlock
     '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
